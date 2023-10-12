@@ -65,7 +65,10 @@
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+</div>
+<div>  <a class="btn btn-secondary"href="{{route('createnewuser')}}">Create new user</a>
           </div>
+         
           
           <!-- /.col -->
         </div>

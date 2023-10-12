@@ -82,4 +82,23 @@ public function login_acn(Request $request)
         return redirect()->route('dashboard')->with('success', 'Profile updated successfully!');
        
     }
+    public function createnewuser()
+    {
+        return view('login/registration');
+    }
+    public function newuserstore()
+    {
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        
+        $user = User::create(request(['name', 'email', 'password']));
+        
+        auth()->login($user);
+        
+        return redirect()->to('/games');
+    }
+
 }
